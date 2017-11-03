@@ -1,0 +1,4 @@
+[
+  { "keys": ["f10"], "command": "reindent",  "args": {"single_line": false}},
+  { "keys": ["ctrl+alt+v"], "command": "clone_file"},
+]

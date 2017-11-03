@@ -1,0 +1,21 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"C Improved",
+		"C++ Starting Kit",
+		"CComplete",
+		"Color Highlighter",
+		"CTags",
+		"DoxyDoxygen",
+		"EasyClangComplete",
+		"Git",
+		"GitStatus",
+		"Package Control",
+		"Scilab",
+		"Switch File Deluxe"
+	]
+}

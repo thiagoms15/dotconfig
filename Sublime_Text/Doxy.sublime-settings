@@ -1,0 +1,81 @@
+// Settings in here override those in "${packages}/DoxyDoxygen/Doxy.sublime-settings",
+// and are overridden in turn by syntax-specific settings.
+{
+	"block_layout": {
+
+        "Doxygen": [
+            // Fill description for a class
+            {
+                "tags": [
+                    "@brief            I'm the {name} class"
+                ],
+                "context": [
+                    { "key": "kind",      "operator": "equal",          "operand": "class" }
+                ]
+            },
+
+            {
+                "tags": [
+                    "@brief            File header",
+                    "",
+                ],
+                "context": [
+                    { "key": "row",      "operator": "equal",          "operand": "0" },
+                    { "key": "kind",     "operator": "equal",          "operand": "" }
+                ]
+            },
+
+            // Auto-fill description for getters
+            {
+                "tags": [
+                    "@brief            Get {name:doxy_words(1,);doxy_lower();}",
+                    "@return           {name:doxy_words(1,);doxy_capitalize();}",
+                    "@author Thiago Marques Siqueira",
+                    "@date {now:%d/%m/%Y}",
+                    ""
+                ],
+                "context": [
+                    { "key": "{name:doxy_words(0);doxy_lower();}",      "operator": "equal",          "operand": "get" }
+                ]
+            },
+
+            {
+                "tags": [
+                    "@brief            File footer",
+                    "",
+                ],
+                "context": [
+                    { "key": "row",      "operator": "equal",          "operand": "-1" },
+                    { "key": "kind",     "operator": "equal",          "operand": "" }
+                ]
+            },
+
+            // Fill description item starting with '_'
+            {
+                "tags": [
+                    "@brief            I'm a private item"
+                ],
+                "context": [
+                    { "key": "name",      "operator": "regex_match",    "operand": "^_.*$" },   // re.match(operand, key)
+                ]
+            },
+
+            // Compact style if there's less than ten parameters
+            {
+                "tags": [
+                    "@brief",
+                    "@param",
+                    "@tparam",
+                    "@return",
+                    "@author Thiago Marques Siqueira",
+                    "@date {now:%d/%m/%Y}",
+                    ""
+                ],
+                "context": [
+                    { "key": "nb_params", "operator": "lower_than",     "operand": "10" }
+                ]
+            }
+        ]
+
+	}
+}
